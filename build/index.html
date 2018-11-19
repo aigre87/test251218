@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en" id="html">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async></script>
+	<script>
+		var WebFontConfig = {
+		  google: { families: ['Open Sans:300,400,700', 'Montserrat:400,500,600,700,800,900'] },
+		  custom: { 
+		  	families: [ 'ALSRublRegular' ],
+	  		urls: ['fonts/rouble/style.css']
+		  },
+		  active: function() {}
+		};
+	</script>
+
+	<link rel="stylesheet" href="css/template_styles.min.css?v1">
+
+	<script src="libs/libs.min.js"></script>
+	<script src="js/main.min.js?v1"></script>
+
+</head>
+
+<body class="yaAntisovLand">
+<div id="mainWrapper">
+	<header>
+		<div class="layout">
+			<div class="shadow"></div>
+			<a href="#" class="logo">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60.3">
+<!-- 			    <filter id="blur-filter" x="-2" y="-2" width="200" height="200">
+			      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+			    </filter>
+					<filter id="f3" x="0" y="0" width="200%" height="200%">
+					  <feOffset result="offOut" in="SourceAlpha" dx="0" dy="3" />
+					  <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+					  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+					</filter> -->
+				  <path fill="#488ECC" d="M1.7 1.8h60.6v57H1.7z"/>
+				  <path fill="#FFF" d="M34.9 16v.1l-3 10.9-3.2-11H15.8v27.8h8.3l1.1-14h.4l2.9 13.6 3.3 1.2 3.4-1.1.1-.4 2.9-13.3h.4l1.1 14H48V16z"/>
+				  <path fill="none" d="M32 27l-16-1.1 9.5.6zm0 0l3.4 16L32 27z"/>
+				  <path fill="#D2D2DB" d="M15.9 43.8h8l-8-17.8z"/>
+				  <path fill="#FFF" d="M15.9 16v9.8l12.7-9.7z"/>
+				  <path fill="#F2F2F2" d="M28.7 16l-12.8 9.8L32 27z"/>
+				  <path fill="#FFF" d="M15.9 25.9l8 17.9h.3l1.1-14h.2v-3.3z"/>
+				  <path fill="#E2E5ED" d="M32 27l-6.5-.5v3.3h.2l2.9 13.6L32 27z"/>
+				  <path fill="#FFF" d="M28.6 43.4l3.3 1.2V27z"/>
+				  <path fill="#D2D2DB" d="M48 23l-13-7v.1l3.8 13.7 9.4-6.6zM35.4 43.1l2.9-13.3h.4L32 27zM32 27z"/>
+				  <path fill="#F2F2F2" d="M32 27l6.7 2.8L34.8 16zm0 0zm0 0l6.7 2.8z"/>
+				  <path fill="#E2E5ED" d="M32 44.6l3.3-1.1.1-.4L32 27z"/>
+				  <path fill="#B9B9C1" d="M48 16H35l13 7z"/>
+				  <path fill="#F2F2F2" d="M48 23.2l-9.3 6.6 9.4 13.8z"/>
+				  <path fill="#FFF" d="M38.7 29.8l1.1 14h8.3v-.2z"/>
+				  <path class="f3" fill='#FFF' d="M83.5 40.7L82 36.2 80.4 31h-.2v16.6h-7V12.4h6.5l3.5 9.4 2.4 7h.3l2.4-7.2 3.4-9.2h6.5v35.2h-7V31h-.1l-1.7 5.5-1.3 4h-4.6zm30.9 0h-5.2l-1 6.9h-7.3l6.7-35.2h8.4l6.7 35.2h-7.3l-1-7zm-3.5-12.1l-.7 5.6h3.2l-.7-5.6-.7-7.1h-.3l-.8 7zM134 12.4c1.5 0 2.8.1 4 .5a7.6 7.6 0 0 1 5.2 5c.5 1.3.8 3 .8 4.9 0 2.4-.4 4.3-1 5.8a8.2 8.2 0 0 1-3 3.7l5.1 15.3h-7l-4.2-13.7h-1.3v13.7h-6.9V12.4h8.4zm-1.4 6.5v8.3h1c.6 0 1 0 1.5-.2.4 0 .8-.3 1.1-.6.4-.4.7-.8.9-1.4s.3-1.3.3-2.2c0-1.3-.3-2.3-1-3-.7-.6-1.5-.9-2.6-.9h-1.2zm22.9 4.3l4.8-10.8h7.3l-7.3 14.5 8 20.7h-7l-5-13.5-1.2 3.1v10.4h-6.8V12.4h6.8v10.8h.4zm15.3 24.4V12.4H187v6.5h-9.2v7.5h8V33h-8v8h9.2v6.6h-16zM200.6 19v28.6h-6.8V18.9h-5.4v-6.5H206v6.5h-5.4zm26.1 29c-2.7 0-4.7-.8-6-2.3a9.1 9.1 0 0 1-2-6.3V22c0-1.2.1-2.5.4-3.6.2-1.2.6-2.3 1.2-3.2.5-1 1.3-1.7 2.4-2.3a8 8 0 0 1 4-.8c2.7 0 4.7.7 5.9 2a8.9 8.9 0 0 1 1.9 5.7l-4 1c0-1.5-.3-2.8-.9-3.7-.6-.9-1.6-1.4-3-1.4-.8 0-1.4.2-2 .6a4 4 0 0 0-1.1 1.4l-.6 1.8-.2 2v17.7c0 .5 0 1 .2 1.7 0 .5.3 1 .6 1.6.3.5.6.9 1.1 1.2a4 4 0 0 0 2 .5c1.3 0 2.3-.3 3-1 .8-.7 1.2-1.6 1.2-2.8V32h-4.1v-3.5h8V40a7.8 7.8 0 0 1-2.3 6 7 7 0 0 1-2.6 1.5c-1 .3-2 .5-3.1.5zm29.2-35.6v25.7c0 3.1-.7 5.6-1.9 7.3-1.2 1.7-3.3 2.5-6.2 2.5-3 0-5-.8-6.3-2.4a9.8 9.8 0 0 1-1.8-6.2V12.4h4v26.9l.1 1.6c.1.6.3 1 .6 1.6s.7 1 1.3 1.2c.5.4 1.2.5 2 .5a3.7 3.7 0 0 0 3.3-1.8c.4-.5.6-1.1.7-1.8l.2-2V12.4h4zm17.9 35.2l-5-15.5h-3.7v15.5h-4V12.4h7.7c2.8 0 5 .8 6.3 2.4 1.3 1.7 2 4.2 2 7.6 0 2-.3 3.8-1 5.3a6.6 6.6 0 0 1-3.5 3.6l5.3 16.3h-4zm-.7-25.2c0-1 0-1.8-.2-2.6a5 5 0 0 0-.8-2c-.4-.6-.9-1-1.5-1.3-.7-.3-1.5-.4-2.5-.4h-3v12.3h3.3a5 5 0 0 0 2.3-.4c.6-.3 1.1-.7 1.5-1.2.3-.6.6-1.2.7-2l.2-2.4zm24.9-10v25.7c0 3.1-.6 5.6-1.8 7.3s-3.3 2.5-6.3 2.5c-2.9 0-5-.8-6.2-2.4a9.8 9.8 0 0 1-1.9-6.2V12.4h4v26.9c0 .5 0 1 .2 1.6 0 .6.3 1 .6 1.6.3.5.7 1 1.2 1.2s1.2.5 2 .5c1 0 1.6-.2 2.2-.5a3 3 0 0 0 1.2-1.3c.3-.5.5-1.1.6-1.8.2-.6.2-1.3.2-2V12.4h4z"/>
+				</svg>
+			</a>
+			<div class="menuBlock">
+				<div class="mobileButton">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+				<div class="menu">
+					<div class="item" data-scroll="#b2">Зачем?</div>
+					<div class="item" data-scroll="#b3">Сколько стоит?</div>
+					<div class="item" data-scroll="#b4">Что это и как работает?</div>
+					<div class="item">Вход</div>
+					<div class="item" data-action="getScript_Js" data-select="2">Заявка</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="section" id="b1">
+		<div class="paralaxShadow"></div>
+		<div id="paralax1" class="blockBg"></div>
+		<div class="layout">
+			<div class="lc">
+				<div class="text1">
+					Мы блокируем "советник" даже в Яндекс браузере!
+				</div>
+				<div class="text2">
+					<div>Яндекс.Советник - расширение для браузеров, оно показывает всем пользователям самую низкую цену на рынке на сайтах конкурентов.</div>
+					<div>Наше решение <span>Антисоветник.Guru</span> блокирует советник для интернет-магазинов - навсегда.<br />
+					Мы решаем проблемы увода трафика Яндекс.Маркетом и демпинга конкурентами.</div>
+				</div>
+			</div>
+			<div class="rc">
+				<div class="formBlock">
+					<form autocomplete="off" action="" id="form_test">
+						<div class="formFlds">
+							<div class="title">
+								Протестируй наше предложение!
+							</div>
+							<div class="row need">
+								<input placeholder="" class="ajax need" type="text" name="name">
+								<div class="desc">Имя</div>
+							</div>
+							<div class="row need">
+								<input placeholder="" class="ajax need" type="text" name="email">
+								<div class="desc">E-mail</div>
+							</div>
+							<div class="row">
+								<input placeholder="" class="ajax complete" type="text" name="phone">
+								<div class="desc">Телефон</div>
+							</div>
+						</div>
+						<input type="submit" value="Попробовать!">
+						<div class="formToggleButton">Вход в ЛК</div>
+						<div class="rulesBlock">
+							<div class="checkboxBlock">
+								<span class="custom-checkbox">
+									<input type="checkbox" class="ajax" name="rules" >
+									<span class="box">
+										<span class="tick"></span>
+									</span>
+								</span>
+							</div>
+							<div class="desc">
+								<span class="desc_txt">Вы соглашаетесь с условиями обработки персональных данных</span> (<a target="_blank" href="http://marketguru.ru/legal/">ознакомиться</a>).
+							</div>
+						</div>
+					</form>
+					<form autocomplete="off" class="hidden" action="" id="form_lk">
+						<div class="formFlds">
+							<div class="title">
+								Вход в личный кабинет
+							</div>
+							<div class="row need">
+								<input placeholder="" class="ajax need" type="text" name="email">
+								<div class="desc">E-mail / логин</div>
+							</div>
+							<div class="row need">
+								<input placeholder="" class="ajax need" type="password" name="password">
+								<div class="desc">Пароль</div>
+							</div>
+						</div>
+						<div class="formToggleButton">Попробовать</div>
+						<input type="submit" value="Вход в ЛК">
+						<div class="rulesBlock">
+							<div class="checkboxBlock">
+								<span class="custom-checkbox">
+									<input type="checkbox" class="ajax" name="rules" >
+									<span class="box">
+										<span class="tick"></span>
+									</span>
+								</span>
+							</div>
+							<div class="desc">
+								<span class="desc_txt">Вы соглашаетесь с условиями обработки персональных данных</span> <a target="_blank" href="http://marketguru.ru/legal/">(ознакомиться)</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="b2">
+		<div class="layout">
+			<div class="title">Почему важно решить проблему уже сейчас</div>
+			<div class="items">
+				<div class="item">
+					<div class="number">1</div>
+					<div class="text">Клиенты, за которых вы заплатили кровные бюджеты, не уходят просто так к конкурентам. Конверсия и доход от сайта вырастут!</div>
+				</div>
+				<div class="item">
+					<div class="number">2</div>
+					<div class="text">Вы боретесь с недобросовестной игрой честными технологическими средствами. </div>
+				</div>
+				<div class="item">
+					<div class="number">3</div>
+					<div class="text">Анстисоветник.Guru - готовое решение для всех браузеров!</div>
+				</div>
+				<div class="item">
+					<div class="number">4</div>
+					<div class="text">Личный кабинет поможет оценить эффективность нашего решения.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="b3">
+		<div class="paralaxShadow"></div>
+		<div id="paralax2" class="blockBg"></div>
+		<div class="layout">
+			<div class="tarifsBlock">
+				<div class="item item1">
+					<div class="name">
+						Стандарт
+					</div>
+					<div class="priceBlock">
+						<div class="price">
+							<span class="price_val">1 900</span> <span class="price_rouble"></span> <span class="price_sep">/</span><span class="price_time">мес.</span>
+						</div>
+					</div>
+					<div class="description">
+						<div class="iw">
+							Браузеры: Chrome, Safari,  <span class="br br1024"></span>
+							Opera, Firefox, IE, Edge. <span class="br br1024"></span>
+							Обновления регулярно. <span class="br br1024"></span>
+							Поддержка в течение суток. <span class="br br1024"></span>
+							Доступ в личный кабинет. <span class="br br1024"></span>
+						</div>
+					</div>
+					<div class="buttonWrap">
+						<span data-action='getScript_Js' data-select='1' class="button">Надо брать!</span>
+					</div>
+				</div>
+				<div class="item item2">
+					<div class="name">
+						Профи
+					</div>
+					<div class="priceBlock">
+						<div class="price">
+							<span class="price_val">4 700</span> <span class="price_rouble"></span> <span class="price_sep">/</span><span class="price_time">мес.</span>
+						</div>
+					</div>
+					<div class="description">
+						<div class="iw">
+							Браузеры: <span class="red">Яндекс</span>, Chrome, Safari,  <span class="br br1024"></span>
+							Opera, Firefox, IE, Edge. <span class="br br1024"></span>
+							Обновления регулярно. <span class="br br1024"></span>
+							Поддержка в течение 3-х часов. <span class="br br1024"></span>
+							Доступ в личный кабинет. <span class="br br1024"></span>
+							Отчетность и аналитика эффективности  <span class="br br1024"></span>
+							скрипта доступны в личном кабинете. <span class="br br1024"></span>
+						</div>
+					</div>
+					<div class="buttonWrap">
+						<span data-action='getScript_Js' data-select='2' class="button">Беру!</span>
+					</div>
+				</div>
+				<div class="item item3">
+					<div class="name">
+						Годовой
+					</div>
+					<div class="priceBlock">
+						<div class="price">
+							<span class="price_val">3 750</span> <span class="price_rouble"></span> <span class="price_sep">/</span><span class="price_time">мес.</span>
+						</div>
+						<div class="priceDesc">
+							При оплате за год
+						</div>
+					</div>
+					<div class="description">
+						<div class="iw">
+							При 100% предоплате  <span class="br br1024"></span>
+							тарифа "Профи" на 12 месяцев  <span class="br br1024"></span>
+							скидка 20% <span class="br br1024"></span>
+						</div>
+					</div>
+					<div class="buttonWrap">
+						<span data-action='getScript_Js' data-select='3' class="button">Хочу!</span>
+					</div>
+				</div>
+			</div>
+			<div class="tarifsBottomDesc">
+				<div class="lc">
+					<span class="sp">3 ДНЯ БЕСПЛАТНО</span> <span class="br1280 br1024"></span>
+					Протестируйте наше предложение <span class="br1280 br1024"></span>
+					Отличный шанс проверить. <span class="br1024"></span> Поможем с установкой кода на сайт. <span class="br1280"></span>
+				</div>
+				<div class="rc">
+					<div class="button" data-action='getScript_Js' data-select='0'>
+						Подключить бесплатно на 3 дня
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="b4">
+		<div class="layout">
+			<div class="title">Как это работает:</div>
+			<div class="items">
+				<div class="item">
+					<div class="flagBlock">
+						<svg class="icon">
+		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+		        </svg>
+					</div>
+					<div class="item_text">
+						<div class="item_title">
+							<svg class="icon">
+			            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+			        </svg>
+							Что такое Антисоветник.Guru?
+						</div>
+						<div class="item_desc">
+							Это Java-скрипт, который необходимо поставить на сайт. Он позволяет блокировать срабатывание Яндекс.Советника.
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="flagBlock">
+						<svg class="icon">
+		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+		        </svg>
+					</div>
+					<div class="item_text">
+						<div class="item_title">
+							<svg class="icon">
+			            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+			        </svg>
+						Что нужно сделать, чтобы заблокировать Яндекс.Советник?</div>
+						<div class="item_desc">Обратиться к нам через форму обратной связи и мы вышлем вам инструкцию для
+установки кода на сайт.</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="flagBlock">
+						<svg class="icon">
+		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+		        </svg>
+					</div>
+					<div class="item_text">
+						<div class="item_title">
+							<svg class="icon">
+			            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+			        </svg>
+						Блокируется ли “советник”  в Яндекс.Браузере ?</div>
+						<div class="item_desc">Да. Но для этого необходимо настроить код непосредственно для вашего сайта “вручную». Поэтому тариф “Профи” дороже, чем тариф “Стандарт“.</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="flagBlock">
+						<svg class="icon">
+		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+		        </svg>
+					</div>
+					<div class="item_text">
+						<div class="item_title">
+							<svg class="icon">
+			            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_flag"></use>
+			        </svg>
+						Как проверить работает ли Антисоветник.Guru?</div>
+						<div class="item_desc">Вы можете подключить скрипт на вашем сайте на 3 дня бесплатно и проверить его работу самостоятельно.</div>
+					</div>
+				</div>
+			</div>
+			<div class="butonW">
+				<div class="button" data-scroll="#b3">
+					<span class='txt'>Посмотреть все тарифы</span>
+					<svg class="icon">
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_topArrow"></use>
+	        </svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="preFooter">
+		<div class="layout">
+			<div class="lc">
+				Протестируйте наше предложение!<span class="brlt800"></span> 3 дня бесплатно. <span class="br"></span>
+				Поможем с установкой кода на сайт.
+			</div>
+			<div class="rc">
+				<div class="button" data-action='getScript_Js' data-select='0'>Подключить бесплатно на 3 дня</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="layout">
+			<div class="adress">© 2018 ООО «Гуру Проджектс» <span class="br320"></span>115280, Москва, ул. Ленинская Слобода, д.19, стр.1 </div>
+			<span class="phone">Телефон:<a href="tel:+74951203230"><span>+7 (495)120-32-30</span></a>; </span>
+			<span class="mail">Эл. почта:<a href="mailto:reklama@corpguru.ru"><span>reklama@corpguru.ru</span></a></span>
+		</div>
+	</footer>
+	<div class="checkLay-lt800"></div>
+	<form autocomplete="off" action="" class="getScriptForm">
+		<div class="title">
+			Подключить скрипт
+		</div>
+		<div class="row need">
+			<input placeholder="" class="ajax need" type="text" name="name">
+			<div class="desc">Имя</div>
+		</div>
+		<div class="row need">
+			<input placeholder="" class="ajax need" type="text" name="email">
+			<div class="desc">E-mail</div>
+		</div>
+		<div class="row">
+			<input placeholder="" class="ajax complete" type="text" name="phone">
+			<div class="desc">Телефон</div>
+		</div>
+		<div class="row selectRow">
+			<select class="ajax" name="tarif">
+				<option value="0">Попробовать</option>
+				<option value="1">Тариф "Стандарт"</option>
+				<option value="2">Тариф "Профи"</option>
+				<option value="3">Тариф "Годовой"</option>
+			</select>
+			<svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/symbol/sprite.svg#ico_topArrow"></use>
+      </svg>
+		</div>
+		<input type="submit" value="Отправить">
+		<div class="rulesBlock">
+			<div class="checkboxBlock">
+				<span class="custom-checkbox">
+					<input type="checkbox" class="ajax" name="rules" >
+					<span class="box">
+						<span class="tick"></span>
+					</span>
+				</span>
+			</div>
+			<div class="desc">
+				<span class="desc_txt">Вы соглашаетесь с условиями обработки персональных данных</span> (<a target="_blank" href="http://marketguru.ru/legal/">ознакомиться</a>).
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+
+</html>

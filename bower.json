@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gsap": "^1.19.0",
+    "jquery.smartresize": "^1.0.0",
+    "svg4everybody": "^2.1.4"
+  },
+  "devDependencies": {
+
+  }
+}
