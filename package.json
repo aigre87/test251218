@@ -1,5 +1,5 @@
 {
-  "name": "marketguru",
+  "name": "ozon_test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -38,5 +38,13 @@
     "imagemin-pngquant": "^5.0.0",
     "pngquant": "^1.1.1",
     "watch": "^0.19.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aigre87/ozon_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aigre87/ozon_test/issues"
+  },
+  "homepage": "https://github.com/aigre87/ozon_test#readme"
 }
