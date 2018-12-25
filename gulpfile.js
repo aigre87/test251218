@@ -77,8 +77,10 @@ gulp.task('js:build', function () {
 gulp.task('libs:build', function() {
     gulp.src([
         'src/libsSrc/jquery/dist/jquery.min.js',
-        //'src/libsSrc/magnific-popup/dist/jquery.magnific-popup.min.js',
+        'src/libsSrc/swiper/dist/js/swiper.min.js',
+        'src/libsSrc/magnific-popup/dist/jquery.magnific-popup.min.js',
         'src/libsSrc/gsap/src/minified/TweenMax.min.js',
+        'src/libsSrc/vue/dist/vue.min.js',
         //'src/libsSrc/select2/dist/js/select2.js',
         //'src/libsSrc/gsap/src/minified/plugins/ColorPropsPlugin.min.js',
         //'src/libsSrc/gsap/src/minified/plugins/ScrollToPlugin.min.js',
@@ -173,9 +175,9 @@ gulp.task('svgSprite:build', function () {
         // remove all fill, style and stroke declarations in out shapes
         .pipe(cheerio({
             run: function ($) {
-                $('[fill]').removeAttr('fill');
-                $('[stroke]').removeAttr('stroke');
-                $('[style]').removeAttr('style');
+                // $('[fill]').removeAttr('fill');
+                // $('[stroke]').removeAttr('stroke');
+                // $('[style]').removeAttr('style');
             },
             parserOptions: {xmlMode: true}
         }))
@@ -242,7 +244,7 @@ gulp.task('watch', function(){
     gulp.watch(path.watch.styles, ['styles:build']);
     gulp.watch(path.watch.images, ['image:build']);
     //gulp.watch(path.watch.fonts,  ['fonts:build']);
-    gulp.watch(path.watch.sprite, ['sprite:build']);
+    //gulp.watch(path.watch.sprite, ['sprite:build']);
     gulp.watch(path.watch.svg, ['svgSprite:build']);
     gulp.watch("build/*.html").on('change', browserSync.reload);
 });

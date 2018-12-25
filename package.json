@@ -1,5 +1,5 @@
 {
-  "name": "ozon_test",
+  "name": "test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -41,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aigre87/ozon_test.git"
+    "url": "git+https://github.com/aigre87/test251218.git"
   },
   "bugs": {
-    "url": "https://github.com/aigre87/ozon_test/issues"
+    "url": "https://github.com/aigre87/test251218/issues"
   },
-  "homepage": "https://github.com/aigre87/ozon_test#readme"
+  "homepage": "https://github.com/aigre87/test251218#readme"
 }

@@ -1,0 +1,30 @@
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #fff;
+          stroke: #dbdbdb;
+          stroke-width: 2px;
+        }
+
+        .cls-2 {
+          fill: #dbdbdb;
+        }
+
+        .cls-3 {
+          stroke: none;
+        }
+
+        .cls-4 {
+          fill: none;
+        }
+      </style>
+    </defs>
+    <g id="Open" transform="translate(-511 -391)">
+      <g id="Ellipse_1" data-name="Ellipse 1" class="cls-1" transform="translate(511 391)">
+        <circle class="cls-3" cx="16" cy="16" r="16"/>
+        <circle class="cls-4" cx="16" cy="16" r="15"/>
+      </g>
+      <path id="Path_5" data-name="Path 5" class="cls-2" d="M8.048,4.952,0,0V9.9Z" transform="translate(531.905 404) rotate(90)"/>
+    </g>
+  </svg>

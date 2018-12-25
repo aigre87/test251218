@@ -1,5 +1,5 @@
 //
-// SmoothScroll for websites v1.4.6 (Balazs Galambosi)
+// SmoothScroll for websites v1.4.8 (Balazs Galambosi)
 // http://www.smoothscroll.net/
 //
 // Licensed under the terms of the MIT license.
@@ -55,6 +55,7 @@ var activeElement;
 var observer;
 var refreshSize;
 var deltaBuffer = [];
+var deltaBufferTimer;
 var isMac = /^Mac/.test(navigator.platform);
 
 var key = { left: 37, up: 38, right: 39, down: 40, spacebar: 32, 
@@ -213,8 +214,16 @@ function scrollArray(elem, left, top) {
         return;
     }  
 
-    var scrollWindow = (elem === document.body);
+    var scrollRoot = getScrollRoot();
+    var isWindowScroll = (elem === scrollRoot || elem === document.body);
     
+    // if we haven't already fixed the behavior, 
+    // and it needs fixing for this sesh
+    if (elem.$scrollBehavior == null && isScrollBehaviorSmooth(elem)) {
+        elem.$scrollBehavior = elem.style.scrollBehavior;
+        elem.style.scrollBehavior = 'auto';
+    }
+
     var step = function (time) {
         
         var now = Date.now();
@@ -254,7 +263,7 @@ function scrollArray(elem, left, top) {
         }
 
         // scroll left and top
-        if (scrollWindow) {
+        if (isWindowScroll) {
             window.scrollBy(scrollX, scrollY);
         } 
         else {
@@ -271,6 +280,11 @@ function scrollArray(elem, left, top) {
             requestFrame(step, elem, (1000 / options.frameRate + 1)); 
         } else { 
             pending = false;
+            // restore default behavior at the end of scrolling sesh
+            if (elem.$scrollBehavior != null) {
+                elem.style.scrollBehavior = elem.$scrollBehavior;
+                elem.$scrollBehavior = null;
+            }
         }
     };
     
@@ -444,6 +458,8 @@ function keydown(event) {
             y = clientHeight * 0.9;
             break;
         case key.home:
+            if (overflowing == document.body && document.scrollingElement)
+                overflowing = document.scrollingElement;
             y = -overflowing.scrollTop;
             break;
         case key.end:
@@ -485,20 +501,29 @@ var uniqueID = (function () {
     };
 })();
 
-var cache = {}; // cleared out after a scrolling session
+var cacheX = {}; // cleared out after a scrolling session
+var cacheY = {}; // cleared out after a scrolling session
 var clearCacheTimer;
+var smoothBehaviorForElement = {};
 
 //setInterval(function () { cache = {}; }, 10 * 1000);
 
 function scheduleClearCache() {
     clearTimeout(clearCacheTimer);
-    clearCacheTimer = setInterval(function () { cache = {}; }, 1*1000);
+    clearCacheTimer = setInterval(function () { 
+        cacheX = cacheY = smoothBehaviorForElement = {}; 
+    }, 1*1000);
 }
 
-function setCache(elems, overflowing) {
+function setCache(elems, overflowing, x) {
+    var cache = x ? cacheX : cacheY;
     for (var i = elems.length; i--;)
         cache[uniqueID(elems[i])] = overflowing;
     return overflowing;
+}
+
+function getCache(el, x) {
+    return (x ? cacheX : cacheY)[uniqueID(el)];
 }
 
 //  (body)                (root)
@@ -513,7 +538,7 @@ function overflowingAncestor(el) {
     var body = document.body;
     var rootScrollHeight = root.scrollHeight;
     do {
-        var cached = cache[uniqueID(el)];
+        var cached = getCache(el, false);
         if (cached) {
             return setCache(elems, cached);
         }
@@ -528,7 +553,7 @@ function overflowingAncestor(el) {
         } else if (isContentOverflowing(el) && overflowAutoOrScroll(el)) {
             return setCache(elems, el);
         }
-    } while (el = el.parentElement);
+    } while ((el = el.parentElement));
 }
 
 function isContentOverflowing(el) {
@@ -547,6 +572,16 @@ function overflowAutoOrScroll(el) {
     return (overflow === 'scroll' || overflow === 'auto');
 }
 
+// for all other elements
+function isScrollBehaviorSmooth(el) {
+    var id = uniqueID(el);
+    if (smoothBehaviorForElement[id] == null) {
+        var scrollBehavior = getComputedStyle(el, '')['scroll-behavior'];
+        smoothBehaviorForElement[id] = ('smooth' == scrollBehavior);
+    }
+    return smoothBehaviorForElement[id];
+}
+
 
 /***********************************************
  * HELPERS
@@ -561,7 +596,7 @@ function removeEvent(type, fn) {
 }
 
 function isNodeName(el, tag) {
-    return (el.nodeName||'').toLowerCase() === tag.toLowerCase();
+    return el && (el.nodeName||'').toLowerCase() === tag.toLowerCase();
 }
 
 function directionCheck(x, y) {
@@ -574,8 +609,6 @@ function directionCheck(x, y) {
         lastScroll = 0;
     }
 }
-
-var deltaBufferTimer;
 
 if (window.localStorage && localStorage.SS_deltaBuffer) {
     try { // #46 Safari throws in private browsing for localStorage 
@@ -597,7 +630,8 @@ function isTouchpad(deltaY) {
             localStorage.SS_deltaBuffer = deltaBuffer.join(',');
         } catch (e) { }  
     }, 1000);
-    return !allDeltasDivisableBy(120) && !allDeltasDivisableBy(100);
+    var dpiScaledWheelDelta = deltaY > 120 && allDeltasDivisableBy(deltaY); // win64 
+    return !allDeltasDivisableBy(120) && !allDeltasDivisableBy(100) && !dpiScaledWheelDelta;
 } 
 
 function isDivisible(n, divisor) {
@@ -618,7 +652,7 @@ function isInsideYoutubeVideo(event) {
             isControl = (elem.classList && 
                          elem.classList.contains('html5-video-controls'));
             if (isControl) break;
-        } while (elem = elem.parentNode);
+        } while ((elem = elem.parentNode));
     }
     return isControl;
 }
@@ -637,7 +671,7 @@ var MutationObserver = (window.MutationObserver ||
                         window.MozMutationObserver);  
 
 var getScrollRoot = (function() {
-  var SCROLL_ROOT;
+  var SCROLL_ROOT = document.scrollingElement;
   return function() {
     if (!SCROLL_ROOT) {
       var dummy = document.createElement('div');
